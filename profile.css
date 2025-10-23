@@ -12,6 +12,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
 }
+/* Hexagonal shape on the left */
+.hexagon-left {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background: #2d2d2d;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    opacity: 0.3;
+}
 
 .container {
   min-height: 100vh;
@@ -162,8 +174,8 @@ a:hover {
 }
 
 .name-badge {
-  background: linear-gradient(90deg, #fb923c 0%, #f97316 100%);
-  padding: 16px 32px;
+  background: linear-gradient(90deg, #fb923c 0%, #F1A132 100%);
+  padding: 0px 32px;
   position: relative;
 }
 
@@ -342,7 +354,12 @@ a:hover {
     font-size: 2rem;
   }
 
-  
+  .triangle-accent {
+    right: -24px;
+    border-top: 30px solid transparent;
+    border-left: 40px solid #f97316;
+    border-bottom: 30px solid transparent;
+  }
 
   .profile-image-container {
     width: 280px;
@@ -358,57 +375,4 @@ a:hover {
     width: 180px;
     height: 180px;
   }
-}
-.octagon-wrapper {
-    
-  position: absolute;
-  top: 65%; 
-  left: 1.4%; 
-  transform: translateY(-50%);
-  z-index: 1; 
- 
-}
-
-.octagon1 {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  background: linear-gradient(135deg, #f1a132, #ffcc70);
-  clip-path: polygon(
-    30% 0%, 70% 0%, 100% 30%, 100% 70%,
-    70% 100%, 30% 100%, 0% 70%, 0% 30%
-  );
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.25),
-    inset 0 -8px 20px rgba(0, 0, 0, 0.2);
-  margin-left: -9rem;
-  margin-top: 1rem;
-  opacity: 0.1;
-  z-index: 1;
-  transition: transform 0.4s ease, opacity 0.3s ease;
-}
-
-.octagon2 {
-  position: absolute;
-  width: 370px;
-  height: 370px;
-  background: linear-gradient(135deg, #f1a132, #ffcc70);
-  clip-path: polygon(
-    30% 0%, 70% 0%, 100% 30%, 100% 70%,
-    70% 100%, 30% 100%, 0% 70%, 0% 30%
-  );
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.25),
-    inset 0 -8px 20px rgba(0, 0, 0, 0.2);
-  margin-left: -5rem;
-  margin-top: 5rem;
-  opacity: 0.08;
-  z-index: 2;
-  transition: transform 0.4s ease, opacity 0.3s ease;
-}
-
-.octagon1:hover,
-.octagon2:hover {
-  transform: scale(1.03);
-  opacity: 0.15;
 }

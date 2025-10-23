@@ -14,7 +14,7 @@ body{
 }
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
-  font-weight: 600; 
+  font-weight: 500; 
   color: white;
 }
 .logo{
@@ -159,7 +159,7 @@ h1, h2, h3 {
     flex: 1;
     position: relative;
     width: 500px;
-    height: 500px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,8 +167,8 @@ h1, h2, h3 {
 
 .dashed-circle {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 130%;
+    height: 130%;
     display: flex;
     align-items: center;
     justify-content: center;
