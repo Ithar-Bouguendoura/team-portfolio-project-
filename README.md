@@ -19,65 +19,22 @@ This repository is created for our team portfolio project.
 
 
 
-Sure 👍 — here’s a complete and professional **Team Retrospective Analysis** you can include in your report, along with a placeholder for your **GitHub Pages link** (you’ll just replace it with your actual one).
-
----
+ 
+ 
+ 
 
 ###  **Deployed Website Link**
 
 [Visit the Deployed Website on GitHub Pages](https://ithar-bouguendoura.github.io/team-portfolio-project-/)
  
 
----
-
-### **Team Retrospective Analysis**
-
-During Phase 2 of development, our team’s most significant technical challenge was managing version control efficiently while multiple members worked simultaneously on separate feature branches. Although Git facilitated collaboration, synchronizing changes to shared files such as `index.html` often led to overlapping edits and merge conflicts. This was particularly evident when each member added their profile link to the same section of the index page, resulting in branch divergence between local and remote repositories.
-
-A specific merge conflict occurred when two branches modified the same `<a>` tag structure in the `index.html` file. Git could not automatically determine which changes to keep, marking the conflict area with `<<<<<<<`, `=======`, and `>>>>>>>`. To resolve this, the responsible member first fetched the latest version of the `develop` branch using:
-
-```bash
-git checkout develop
-git pull origin develop
-```
-
-Then, after switching back to their feature branch and merging:
-
-```bash
-git checkout feature/implement-name-profile
-git merge develop
-```
-
-The conflicting section was manually edited to retain all team members’ profile links in the correct order. After testing locally to ensure that no links were broken, the conflict was resolved, staged, and committed with:
-
-```bash
-git add .
-git commit -m "fix: resolve merge conflict in index.html"
-```
-
-The most frequent issues involved multiple team members modifying the same section of the file, such as inserting their profile images and links. Some members accidentally placed their photo inside the same <div> element as another member’s image, breaking the layout. Others used incorrect or missing image paths, leading to broken links when the page was deployed.
-
-A particularly complex merge conflict occurred in the index.html file when two branches contained overlapping edits within the image container and hyperlink structure. Git flagged the conflicting lines, making it unclear which version to keep. To resolve it, one member pulled the latest updates from the develop branch:
-
-git checkout develop
-git pull origin develop
-
-
-Then merged them into their feature branch:
-
-git checkout feature/implement-name-profile
-git merge develop
-
-
-Afterward, the team met to review the conflict manually. They ensured that each image and link had a unique container and corrected any incorrect image paths. Once verified, the conflict markers were removed, the code was cleaned, and the fix was committed:
-
-git add .
-git commit -m "fix: resolve merge conflict and correct image paths"
-
-
-The pull request and peer review process significantly improved the project’s quality. Each pull request allowed other members to review structure, image paths, and formatting before merging. This not only prevented similar mistakes from recurring but also encouraged team collaboration, as members learned to identify and fix conflicts effectively. Overall, these practices led to a cleaner final result, a better understanding of distributed workflows, and stronger teamwork.
  
 
 
- 
- 
+ ## Team Retrospective Analysis
+
+During the collaborative development of our team portfolio project, the most significant technical challenge we encountered was managing multiple concurrent feature branches while maintaining consistency across shared files, especially index.html and the main CSS files. Each team member was responsible for creating their own profile page and linking it to the main index, which required everyone to edit the same HTML section. This led to overlapping code changes, duplicate elements, and broken image links when merging different branches. These issues tested our coordination and understanding of Git workflows.
+
+A specific merge conflict occurred when two members placed their profile photos in the same <div> container within index.html, while another member accidentally provided an incorrect image path. When their branches were merged into the develop branch, Git flagged conflicts in the section related to image placement and links. To resolve this, the team leader took responsibility for handling the conflict. The process involved several steps: (1) identifying the conflicting lines through Git’s conflict markers, (2) discussing as a team which version of the code should be preserved, (3) manually editing index.html to separate each member’s photo into distinct containers, (4) correcting the broken image paths, and (5) verifying that all profiles displayed correctly before pushing the resolved version. Afterward, the team leader completed the merge and final edits to ensure the layout was consistent.
+
+The pull request and peer review process proved very effective in maintaining the project’s quality. Each feature branch was reviewed before merging into develop, allowing members to spot errors, inconsistent styles, and missing links early. The final merge from develop into main was also performed by the team leader after confirming that all pages worked correctly. This structured workflow improved not only the technical quality of the final website but also our teamwork, communication, and understanding of version control practices in collaborative software development.
